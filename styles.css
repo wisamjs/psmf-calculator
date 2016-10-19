@@ -1,19 +1,17 @@
 .wrapper {
-  margin: 0 20px;
+  margin: auto 20px;
   padding: 0;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
 }
 
 .forms {
+  margin-bottom: 100px;
 }
 
 #calculator {
-  border: 3px solid #FFF;
-  border-radius: 20px;
   text-align: center;
   padding: 20px 0;
   // margin: 20px 250px;
@@ -23,22 +21,28 @@
   background-color: #FFF;
   color: #4b6cb7;
   border: 3px solid #FFF;
-  border-radius: 20px;
   text-align: center;
   padding: 20px 0;
 
 }
 
 input {
-  appearance: none;
   outline: none;
-  background-color: transparent;
-  border: solid 2px #FFF;
-  padding: 4px;
-  margin: 8px;
-  border-radius: 20px;
+  -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+
+  background: rgba(0,0,0);
+  border: none;
+  padding: 4px 4px 0;
+  margin: 8px 0;
   font-size: 24px;
   width: 43px;
+  color: black;
+}
+
+::-webkit-input-placeholder {
+  color: black;
 }
 
 select {
@@ -51,12 +55,15 @@ select {
 
 button {
   border: none;
-  background-color: #88a2d7;
+  background-color: #0096F9;
+  text-transform: uppercase;
   padding: 10px 60px;
   font-size: 12px;
   border-radius: 5px;
   outline: none;
   width: 100%;
+  margin: 20px 0;
+  color: white;
 }
 
 body {
@@ -66,6 +73,10 @@ body {
 
 .lato {
   font-family: 'Lato';
+}
+
+.open-sans {
+  font-family: 'Open Sans';
 }
 
 .white {
@@ -79,4 +90,16 @@ p {
 
 h2 {
   text-align: center;
+}
+
+.greyed-out {
+  color: #D1D1D1;
+}
+
+.fs21 {
+  font-size: 21px;
+}
+
+.fs12 {
+  font-size: 12px;
 }
