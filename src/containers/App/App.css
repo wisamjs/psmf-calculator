@@ -1,24 +1,105 @@
 .App {
+  margin: auto 20px;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.forms {
+  margin-bottom: 100px;
+}
+
+#calculator {
   text-align: center;
+  padding: 20px 0;
+  // margin: 20px 250px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#calculated {
+  background-color: #FFF;
+  color: #4b6cb7;
+  border: 3px solid #FFF;
+  text-align: center;
+  padding: 20px 0;
+
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+input {
+  outline: none;
+  -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+
+  background: rgba(0,0,0);
+  border: none;
+  padding: 4px 4px 0;
+  margin: 8px 0;
+  font-size: 24px;
+  width: 43px;
+  color: black;
+}
+
+::-webkit-input-placeholder {
+  color: black;
+}
+
+select {
+-webkit-appearance: none;
+  padding: 5px 2px 5px 2px;
+  margin: 10px;
+  outline: none;
+  text-align: left;
+}
+
+button {
+  border: none;
+  background-color: #0096F9;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-size: 12px;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  margin: 20px 0;
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+body {
+  padding: 0;
+  margin:  0 auto;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.lato {
+  font-family: 'Lato';
+}
+
+.open-sans {
+  font-family: 'Open Sans';
+}
+
+.white {
+  color: #FFF;
+}
+
+p {
+  text-align: center;
+
+}
+
+h2 {
+  text-align: center;
+}
+
+.greyed-out {
+  color: #D1D1D1;
+}
+
+.fs21 {
+  font-size: 21px;
+}
+
+.fs12 {
+  font-size: 12px;
 }
