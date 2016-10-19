@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
   <title>PSMF Calculator</title>
 </head>
 <body>
-  <script src="script.js"></script>
-  <script src="utils.js"></script>
+
+  <div class="wrapper">
+    <div class="description">
+      <h2>How much do you weigh?</h2>
+      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    </div>
+    <div class="forms">
+      <form
+      name="calculator"
+      id="calculator"
+      class="lato">
+        <div class="field">
+          <input
+          name="weight"
+          type="number"
+          pattern="[0-9]*"
+          placeholder="___"><span>lbs</span>
+        </div>
+      </form>
+    </div>
+    <button>Submit</button>
+  </div>
+
 </body>
 </html>
