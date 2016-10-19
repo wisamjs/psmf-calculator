@@ -1,8 +1,17 @@
 {
   "name": "psmf-calculator",
   "version": "0.1.0",
-  "private": true,
+  "author": "Wisam Zaghal <wisamzaghal@gmail.com> (http://wisam.io/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wzaghal/psmf-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wzaghal/psmf-calculator/issues"
+  },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
     "react-scripts": "0.6.1"
   },
   "dependencies": {
