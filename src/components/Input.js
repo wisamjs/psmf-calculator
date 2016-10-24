@@ -1,13 +1,16 @@
 import React, {PropTypes} from 'react';
 
-const Input = () => {
+const DEFAULT_CLASSES = "h2 my2 px0 py1";
+
+const Input = ({name, className = DEFAULT_CLASSES, type, pattern, placeholder, onChange}) => {
   return (
     <input
-    name="weight"
-    className="h2 my2 px0 py1"
-    type="number"
-    pattern="[0-9]*"
-    placeholder="150"/>
+    name={name}
+    className={className}
+    type={type}
+    pattern={pattern}
+    placeholder={placeholder}
+    onChange={onChange}/>
   );
 }
 
@@ -21,4 +24,4 @@ Input.propTypes = {
   onChange: PropTypes.func
 }
 
-export default Input
+export default Input;

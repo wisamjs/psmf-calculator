@@ -2,27 +2,35 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './App.css';
+import {
+  updateWeight
+} from '../../utils/utils';
 import Input from '../../components/Input';
+import Description from '../../components/Description';
+import Title from '../../components/Title';
 
-function mapStateToProps(state) {
+function mapStateToProps({calculator}) {
   return {
-    weightLbs: state.calculator.weightLbs,
-    weightKgs: state.calculator.weightKgs
+    weightLbs: calculator.get('weightLbs'),
+    weightKgs: calculator.get('weightKgs')
   };
 }
 
-function mapDispatchToProps() {
+function mapDispatchToProps(dispatch) {
   return {
+    onChange: (e) => dispatch(updateWeight(e.target.value))
   };
 
 }
 
-const App = ({weightLbs, weightKgs}) => {
+const App = ({weightLbs, weightKgs, onChange}) => {
   return (
     <div className="mx2 flex justify-between flex-column">
-      <div className="description">
-        <h2 className="lato center">How much do you weigh?</h2>
-        <p className="open-sans center greyed-out">This will help us calculate your lean mass and total calorie intake</p>
+      <div>
+        <Title>How much do you weigh?</Title>
+        <Description>
+          This will help us calculate your lean mass and total calorie intake
+        </Description>
       </div>
 
       <div className="mb4">
@@ -30,7 +38,13 @@ const App = ({weightLbs, weightKgs}) => {
         name="calculator"
         className="lato center py2">
           <div>
-            <Input/>
+            <Input
+            name="weight"
+            type="number"
+            pattern="[0-9]*"
+            placeholder="150"
+            onChange={onChange}
+            />
             <span className="lato grey h3">lbs</span>
             <p className="grey lato h6"> {weightKgs} Kg</p>
           </div>

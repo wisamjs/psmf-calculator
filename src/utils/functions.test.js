@@ -22,7 +22,7 @@ import {
   fatToKcals,
   getTotalCalories
 
-  } from './utils';
+  } from './functions';
 
   const personA = {
     bf: 15,
