@@ -2,17 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './App.css';
-import {
-  updateWeight
-} from '../../utils/utils';
+import { updateWeight } from '../../utils/utils';
+import { getWeightKg } from '../../selectors/conversions';
+
 import Input from '../../components/Input';
 import Description from '../../components/Description';
 import Title from '../../components/Title';
 
 function mapStateToProps({calculator}) {
   return {
-    weightLbs: calculator.get('weightLbs'),
-    weightKgs: calculator.get('weightKgs')
+    weightLbs: calculator.weightLbs,
+    weightKgs: getWeightKg(calculator)
   };
 }
 
