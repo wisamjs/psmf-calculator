@@ -10,7 +10,7 @@ const Description = ({children, className = DEFAULT_CLASSES}) => {
   );
 }
 
-Description.defaultName = 'Input';
+Description.defaultName = 'Description';
 Description.propTypes = {
   children: PropTypes.node.isRequired,
 }

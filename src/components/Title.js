@@ -10,7 +10,7 @@ const Title = ({children, className = DEFAULT_CLASSES}) => {
   );
 }
 
-Title.defaultName = 'Input';
+Title.defaultName = 'Title';
 Title.propTypes = {
   children: PropTypes.node.isRequired,
 }

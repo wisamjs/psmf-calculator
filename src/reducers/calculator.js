@@ -2,7 +2,7 @@ import { UPDATE_WEIGHT } from '../actions/actions';
 
 const INITIAL_STATE = {
   weightLbs: 150,
-  weightKgs: 68
+  bodyfat: 23
 };
 
 export default function calculator(state = INITIAL_STATE, action= {}) {

@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './App.css';
+import './Weight.css';
 import { updateWeight } from '../../utils/utils';
 import { getWeightKg } from '../../selectors/conversions';
 
 import Input from '../../components/Input';
 import Description from '../../components/Description';
 import Title from '../../components/Title';
+import Button from '../../components/Button';
 
 function mapStateToProps({calculator}) {
   return {
@@ -23,7 +24,7 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-const App = ({weightLbs, weightKgs, onChange}) => {
+const Weight = ({weightLbs, weightKgs, onChange}) => {
   return (
     <div className="mx2 flex justify-between flex-column">
       <div>
@@ -37,25 +38,22 @@ const App = ({weightLbs, weightKgs, onChange}) => {
         <form
         name="calculator"
         className="lato center py2">
-          <div>
             <Input
             name="weight"
             type="number"
             pattern="[0-9]*"
-            placeholder="150"
+            unit="lbs"
+            defaultValue={weightLbs}
             onChange={onChange}
             />
-            <span className="lato grey h3">lbs</span>
             <p className="grey lato h6"> {weightKgs} Kg</p>
-          </div>
         </form>
       </div>
-
-      <button className="uppercase my3 px3 py2 h6 bg-blue white">Continue</button>
+      <Button path="bodyfat"/>
     </div>
   );
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps)(App);
+  mapDispatchToProps)(Weight);
