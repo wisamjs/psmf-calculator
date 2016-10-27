@@ -16,7 +16,7 @@ const Button = ({children, path, className = DEFAULT_CLASSES}) => {
 
 Button.defaultName = 'Button';
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node
 }
 
 export default Button;
