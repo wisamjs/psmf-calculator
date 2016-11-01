@@ -1,0 +1,1 @@
+export const TRAINING_OPTIONS = ['inactive', 'aerobic', 'weight-training'];

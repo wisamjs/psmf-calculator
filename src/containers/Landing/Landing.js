@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import Input from '../../components/Input';
 import Description from '../../components/Description';
 import Title from '../../components/Title';
 import Button from '../../components/Button';
@@ -16,7 +14,7 @@ const Landing = () => {
         </Description>
       </div>
 
-      <Button path="leanMass"/>
+      <Button path="weight"/>
     </div>
   );
 }

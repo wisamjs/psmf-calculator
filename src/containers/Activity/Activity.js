@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Input from '../../components/Input';
 import Description from '../../components/Description';
 import Title from '../../components/Title';
 import Button from '../../components/Button';
+import { ACTIVITY_OPTIONS } from './activity-options';
 
-import { updateBodyFat } from '../../utils/utils';
+import { updateActivity } from '../../utils/utils';
 
 function mapStateToProps({calculator}) {
   return {
@@ -16,17 +16,20 @@ function mapStateToProps({calculator}) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onChange: (e) => dispatch(updateBodyFat(e.target.value))
+    onChange: (e) => dispatch(updateActivity(e.target.value))
   };
 }
 
-const Bodyfat = ({onChange, bodyfat}) => {
+const Activity = ({onChange}) => {
+  let options = ACTIVITY_OPTIONS
+    .map((option, key) => <option key={key} value={option}>{option}</option>);
+
   return (
     <div className="mx2 flex justify-between flex-column">
       <div>
-        <Title>What is your Bodyfat percentage?</Title>
+        <Title>Activity Type</Title>
         <Description>
-          This will help us calculate your lean mass and total calorie intake
+          This will help us decide how many total calories you need.
         </Description>
       </div>
 
@@ -34,22 +37,18 @@ const Bodyfat = ({onChange, bodyfat}) => {
         <form
         name="calculator"
         className="lato center py2">
-            <Input
-            name="weight"
-            type="number"
-            pattern="[0-9]*"
-            unit='%'
-            defaultValue={bodyfat}
-            onChange={onChange}
-            />
+          <select
+          onChange={onChange}>
+            {options}
+          </select>
         </form>
       </div>
 
-      <Button path="training"/>
+      <Button/>
     </div>
   );
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps)(Bodyfat);
+  mapDispatchToProps)(Activity);

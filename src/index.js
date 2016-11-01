@@ -8,7 +8,9 @@ import App from './containers/App';
 import Weight from './containers/Weight/Weight';
 import Bodyfat from './containers/Bodyfat/Bodyfat';
 import Landing from './containers/Landing/Landing';
-import LeanMass from './containers/LeanMass/LeanMass';
+import Training from './containers/Training/Training';
+import Activity from './containers/Activity/Activity';
+
 import * as reducers from './reducers/index';
 import './styles/index.css';
 
@@ -20,10 +22,11 @@ ReactDOM.render(
    <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRedirect to='landing'/>
-        <Route path="landing" component={Landing}/>        
-        <Route path="leanMass" component={LeanMass}/>
+        <Route path="landing" component={Landing}/>
         <Route path="weight" component={Weight}/>
         <Route path="bodyfat" component={Bodyfat}/>
+        <Route path="training" component={Training}/>
+        <Route path="activity" component={Activity}/>
       </Route>
     </Router>
   </Provider>,
