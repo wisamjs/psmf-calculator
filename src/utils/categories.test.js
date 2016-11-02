@@ -1,8 +1,10 @@
 import {expect} from 'Chai';
 import {
+  getCategory,
   isCategory1,
   isCategory2,
-  isCategory3
+  isCategory3,
+  getNumOfFreeMeals
 } from './categories';
 
   const personA = {
@@ -60,6 +62,35 @@ describe('Bodyfat Categories', () => {
     [personE, personF].forEach((person) => {
       expect(isCategory3(person.bf, person.gender)).eql(true);
       expect(isCategory2(person.bf, person.gender)).eql(false);
+    });
+  });
+});
+
+describe('Free meals', () => {
+  it('should calculate free meals for Category 1', () => {
+    [personA, personB].forEach((person) => {
+      expect(getNumOfFreeMeals
+        (getCategory(person.bf, person.gender))
+      ).to.eql(0);
+    });
+  });
+
+  it('should calculate free meals for Category 2', () => {
+
+    [personC, personD].forEach((person) => {
+      expect(getNumOfFreeMeals
+        (getCategory(person.bf, person.gender))
+      ).to.eql(1);
+    });
+
+  });
+
+  it('should calculate free meals for Category 3', () => {
+
+    [personE, personF].forEach((person) => {
+      expect(getNumOfFreeMeals
+        (getCategory(person.bf, person.gender))
+      ).to.eql(2);
     });
   });
 });

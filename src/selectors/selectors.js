@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { toKg } from '../utils/conversions';
 import { getLeanMass } from '../utils/bodystats';
-import { getCategory } from '../utils/categories';
+import { getCategory, getNumOfFreeMeals } from '../utils/categories';
 
 export const getWeight = (state) => state.weightLbs;
 export const getBodyfat = (state) => state.bodyfat;
@@ -15,9 +15,13 @@ export const
   getLeanMassSelector = createSelector(
   getWeight,
   getBodyfat,
-  (weightLbs, bf) => getLeanMass(weightLbs, bf));
+  getLeanMass);
 
 export const getCategoryTypeSelector = createSelector(
   getBodyfat,
   getGender,
-  (bf, gender) => getCategory(bf, gender));
+  getCategory);
+
+export const getFreeMealsSelector = createSelector(
+  getCategoryTypeSelector,
+  getNumOfFreeMeals);

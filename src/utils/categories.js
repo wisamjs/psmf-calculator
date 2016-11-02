@@ -39,3 +39,16 @@ export function isCategory3(bf, gender ) {
   ||
     gender === 'female' && bf >= 35;
 }
+
+export function getNumOfFreeMeals(category) {
+
+  if (category === CATEGORY_2) {
+    return 1;
+  }
+
+  if (category === CATEGORY_3) {
+    return 2;
+  }
+
+  return 0;
+}
