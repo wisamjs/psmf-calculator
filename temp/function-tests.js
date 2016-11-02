@@ -55,7 +55,7 @@ import {
     gender: 'female'
   };
 
-describe('Bodyfat Categories', () => {
+xdescribe('Bodyfat Categories', () => {
   it('should correctly identify Category 1', () => {
     [personA, personB].forEach((person) => {
       expect(isCategory1(person.bf, person.gender)).eql(true);
@@ -83,18 +83,18 @@ describe('Bodyfat Categories', () => {
   });
 });
 
-describe('Training Categories', () => {
+xdescribe('Training Categories', () => {
   it('should ')
 
 });
 
-describe('Lean Mass', () => {
+xdescribe('Lean Mass', () => {
   it('should calculate lean mass', () => {
     expect(getLeanMass(personA.bf, personA.weight)).to.eql(85);
   });
 });
 
-describe('Free meals', () => {
+xdescribe('Free meals', () => {
   it('should calculate free meals for Category 1', () => {
     [personA, personB].forEach((person) => {
       expect(getNumOfFreeMeals
@@ -123,7 +123,7 @@ describe('Free meals', () => {
   });
 });
 
-describe('Refeeds', () => {
+xdescribe('Refeeds', () => {
   it('should identify if refeeds are an option for each category', () => {
     expect(hasRefeed(1)).to.eql(true);
     expect(hasRefeed(3)).to.eql(false);
@@ -137,7 +137,7 @@ describe('Refeeds', () => {
   });
 });
 
-describe('Full Diet Break', () => {
+xdescribe('Full Diet Break', () => {
   it('should get details for category 1', () => {
     var result = getFullDietBreak(1);
 
@@ -166,7 +166,7 @@ describe('Full Diet Break', () => {
 
 });
 
-describe('Protein intake', () => {
+xdescribe('Protein intake', () => {
   it('should return the right numbers for Category 1', () => {
     expect(getProteinInGrams(141, 1, 1)).to.eql(176);
     expect(getProteinInGrams(141, 1, 2)).to.eql(211);
@@ -186,7 +186,7 @@ describe('Protein intake', () => {
   });
 });
 
-describe('Gram to Calories conversion', () => {
+xdescribe('Gram to Calories conversion', () => {
   it('should convert protein correctly', () => {
     expect(proteinToKcals(264)).to.eql(1056);
   });
@@ -201,7 +201,7 @@ describe('Gram to Calories conversion', () => {
 
 })
 
-describe('Total Calorie Intake', () => {
+xdescribe('Total Calorie Intake', () => {
   it('should get correct calorie intake', () => {
     expect(getTotalCalories(264)).to.eql(1336);
 

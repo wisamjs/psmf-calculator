@@ -75,13 +75,6 @@ export function isWeightTraining(activity) {
   return activity === 1 || activity == 'Weight Training';
 }
 
-export function getLeanMass(bf, weight) {
-  return weight * (1 - percentToDecimal(bf));
-}
-
-export function percentToDecimal(percent) {
-  return percent/100;
-}
 
 export function areEqual(a, b){
   return a === b;

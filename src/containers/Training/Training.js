@@ -44,7 +44,7 @@ const Training = ({onChange}) => {
         </form>
       </div>
 
-      <Button path="activity"/>
+      <Button path="gender"/>
     </div>
   );
 }

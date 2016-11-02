@@ -1,1 +1,0 @@
-export const ACTIVITY_OPTIONS = ['sedentary', 'lightly-active', 'moderately-active', 'vigorously-active'];

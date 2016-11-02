@@ -1,8 +1,9 @@
-import { 
-	UPDATE_WEIGHT, 
+import {
+	UPDATE_WEIGHT,
 	UPDATE_BODYFAT,
 	UPDATE_TRAINING,
-	UPDATE_ACTIVITY
+	UPDATE_ACTIVITY,
+	UPDATE_GENDER
 } from '../actions/actions';
 
 export function updateWeight(val) {
@@ -19,6 +20,10 @@ export function updateTraining(val) {
 
 export function updateActivity(val) {
 	return updateInput(UPDATE_ACTIVITY)(val);
+}
+
+export function updateGender(val) {
+	return updateInput(UPDATE_GENDER)(val);
 }
 
 export function updateInputNumber(type) {
@@ -38,4 +43,3 @@ export function updateInput(type) {
 		}
 	}
 }
-

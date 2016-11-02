@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './Weight.css';
 import { updateWeight } from '../../utils/utils';
-import { getWeightKg } from '../../selectors/conversions';
+import { getWeightKgSelector } from '../../selectors/selectors.js';
 
 import Input from '../../components/Input';
 import Description from '../../components/Description';
@@ -13,7 +13,7 @@ import Button from '../../components/Button';
 function mapStateToProps({calculator}) {
   return {
     weightLbs: calculator.weightLbs,
-    weightKgs: getWeightKg(calculator)
+    weightKgs: getWeightKgSelector(calculator)
   };
 }
 

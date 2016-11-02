@@ -4,32 +4,32 @@ import { connect } from 'react-redux';
 import Description from '../../components/Description';
 import Title from '../../components/Title';
 import Button from '../../components/Button';
-import { ACTIVITY_OPTIONS } from './activity-options';
+import { GENDER_OPTIONS } from './gender-options';
 
-import { updateActivity } from '../../utils/utils';
+import { updateGender } from '../../utils/utils';
 
-function mapStateToProps({calculator}) {
+function mapStateToProps() {
   return {
-    bodyfat: calculator.bodyfat,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onChange: (e) => dispatch(updateActivity(e.target.value))
+    onChange: (e) => dispatch(updateGender(e.target.value))
   };
+
 }
 
-const Activity = ({onChange}) => {
-  let options = ACTIVITY_OPTIONS
+const Gender = ({onChange}) => {
+  let options = GENDER_OPTIONS
     .map((option, key) => <option key={key} value={option}>{option}</option>);
 
   return (
     <div className="mx2 flex justify-between flex-column">
       <div>
-        <Title>Activity Type</Title>
+        <Title>Gender</Title>
         <Description>
-          This will help us decide how many total calories you need.
+        This will help us get your category type.
         </Description>
       </div>
 
@@ -44,11 +44,11 @@ const Activity = ({onChange}) => {
         </form>
       </div>
 
-      <Button/>
+      <Button path="results"/>
     </div>
   );
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps)(Activity);
+  ((mapStateToProps)),
+  mapDispatchToProps)(Gender);

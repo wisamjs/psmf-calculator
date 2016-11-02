@@ -9,7 +9,8 @@ import Weight from './containers/Weight/Weight';
 import Bodyfat from './containers/Bodyfat/Bodyfat';
 import Landing from './containers/Landing/Landing';
 import Training from './containers/Training/Training';
-import Activity from './containers/Activity/Activity';
+import Results from './containers/Results/Results';
+import Gender from './containers/Gender/Gender';
 
 import * as reducers from './reducers/index';
 import './styles/index.css';
@@ -26,7 +27,8 @@ ReactDOM.render(
         <Route path="weight" component={Weight}/>
         <Route path="bodyfat" component={Bodyfat}/>
         <Route path="training" component={Training}/>
-        <Route path="activity" component={Activity}/>
+        <Route path="gender" component={Gender}/>
+        <Route path="results" component={Results}/>
       </Route>
     </Router>
   </Provider>,
