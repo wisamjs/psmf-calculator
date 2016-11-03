@@ -15,7 +15,7 @@ export function updateBodyFat(val) {
 }
 
 export function updateTraining(val) {
-	return updateInput(UPDATE_TRAINING)(val);
+	return updateInputNumber(UPDATE_TRAINING)(val);
 }
 
 export function updateActivity(val) {

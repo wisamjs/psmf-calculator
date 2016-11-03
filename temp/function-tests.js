@@ -94,48 +94,6 @@ xdescribe('Lean Mass', () => {
   });
 });
 
-xdescribe('Free meals', () => {
-  it('should calculate free meals for Category 1', () => {
-    [personA, personB].forEach((person) => {
-      expect(getNumOfFreeMeals
-        (getCategory(person.bf, person.gender))
-      ).to.eql(0);
-    });
-  });
-
-  it('should calculate free meals for Category 2', () => {
-
-    [personC, personD].forEach((person) => {
-      expect(getNumOfFreeMeals
-        (getCategory(person.bf, person.gender))
-      ).to.eql(1);
-    });
-
-  });
-
-  it('should calculate free meals for Category 3', () => {
-
-    [personE, personF].forEach((person) => {
-      expect(getNumOfFreeMeals
-        (getCategory(person.bf, person.gender))
-      ).to.eql(2);
-    });
-  });
-});
-
-xdescribe('Refeeds', () => {
-  it('should identify if refeeds are an option for each category', () => {
-    expect(hasRefeed(1)).to.eql(true);
-    expect(hasRefeed(3)).to.eql(false);
-    expect(hasRefeed(2)).to.eql(true);
-  });
-
-  it('should specify refeed in more detail', () => {
-    expect(getRefeedDetails(1)).eql(REFEED_1);
-    expect(getRefeedDetails(2)).eql(REFEED_2);
-    expect(getRefeedDetails(3)).eql('N/A');
-  });
-});
 
 xdescribe('Full Diet Break', () => {
   it('should get details for category 1', () => {

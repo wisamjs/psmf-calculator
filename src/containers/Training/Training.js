@@ -22,7 +22,7 @@ function mapDispatchToProps(dispatch) {
 
 const Training = ({onChange}) => {
   let options = TRAINING_OPTIONS
-    .map((option, key) => <option key={key} value={option}>{option}</option>);
+    .map((option, key) => <option key={key} value={option.value}>{option.display}</option>);
 
   return (
     <div className="mx2 flex justify-between flex-column">

@@ -10,6 +10,24 @@ export function toKg(num, type) {
   }
 }
 
+export function toKcals(multiplier) {
+  return function(amount) {
+    return multiplier * amount;
+  }
+}
+
+export function proteinToKcals(amount) {
+  return toKcals(4)(amount);
+}
+
+export function carbsToKcals(amount) {
+  return proteinToKcals(amount);
+}
+
+export function fatToKcals(amount) {
+  return toKcals(9)(amount);
+}
+
 export function convert(rate, precision) {
   return (num) =>
     parseFloat(

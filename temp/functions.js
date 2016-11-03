@@ -21,10 +21,10 @@ export function isCategory2( bf, gender ) {
     && !isCategory1(bf, gender)
     && !isCategory3(bf, gender)
   ||
-    gender === 'female'
+    (gender === 'female'
     && bf <= 34
     && !isCategory1(bf, gender)
-    && !isCategory3(bf, gender);
+    && !isCategory3(bf, gender));
 }
 
 export function isCategory3(bf, gender ) {
@@ -113,32 +113,6 @@ export function getRefeedDetails(category) {
   return 'N/A';
 }
 
-export function getFullDietBreak(category) {
-
-  if (category === CATEGORY_1) {
-    return {
-      max: 12,
-      min: 11,
-      duration: 'days'
-    }
-  }
-
-  if (category === CATEGORY_2) {
-    return {
-      max: 6,
-      min: 2,
-      duration: 'weeks'
-    }
-  }
-
-  if (category === CATEGORY_3) {
-    return {
-      max: 12,
-      min: 6,
-      duration: 'weeks'
-    }
-  }
-}
 
 export function getProteinInGrams(leanMass, bodyFatCategory, trainingCategory) {
   if (bodyFatCategory === CATEGORY_1) {
@@ -175,24 +149,6 @@ export function getProteinInGrams(leanMass, bodyFatCategory, trainingCategory) {
     }
   }
 
-}
-
-export function toKcals(multiplier) {
-  return function(amount) {
-    return multiplier * amount;
-  }
-}
-
-export function proteinToKcals(amount) {
-  return toKcals(4)(amount);
-}
-
-export function carbsToKcals(amount) {
-  return proteinToKcals(amount);
-}
-
-export function fatToKcals(amount) {
-  return toKcals(9)(amount);
 }
 
 

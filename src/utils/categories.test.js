@@ -1,10 +1,25 @@
 import {expect} from 'Chai';
+
+import {
+  CATEGORY_1,
+  CATEGORY_2,
+  CATEGORY_3,
+  REFEED_1,
+  REFEED_2,
+  FULL_BREAK_1,
+  FULL_BREAK_2,
+  FULL_BREAK_3
+} from './constants';
+
 import {
   getCategory,
   isCategory1,
   isCategory2,
   isCategory3,
-  getNumOfFreeMeals
+  getNumOfFreeMeals,
+  hasRefeed,
+  getRefeedDetails,
+  getFullDietBreak
 } from './categories';
 
   const personA = {
@@ -93,4 +108,27 @@ describe('Free meals', () => {
       ).to.eql(2);
     });
   });
+});
+
+describe('Refeeds', () => {
+  it('should specify refeed details', () => {
+    expect(getRefeedDetails(1)).eql(REFEED_1);
+    expect(getRefeedDetails(2)).eql(REFEED_2);
+    expect(getRefeedDetails(3)).eql('N/A');
+  });
+});
+
+describe('Full Diet Break', () => {
+  it('should get details for category 1', () => {
+    expect(getFullDietBreak(1)).to.eql('11 - 12 days');
+  });
+
+  it('should get details for category 2', () => {
+    expect(getFullDietBreak(2)).to.eql('2 - 6 weeks');
+  });
+
+  it('should get details for category 3', () => {
+    expect(getFullDietBreak(3)).to.eql('6 - 12 weeks');
+  });
+
 });
