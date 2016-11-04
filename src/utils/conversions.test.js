@@ -1,4 +1,4 @@
-import {expect} from 'Chai';
+import {expect} from 'chai';
 import { toKg, proteinToKcals, carbsToKcals, fatToKcals  } from './conversions';
 
 describe('Conversions', () => {
