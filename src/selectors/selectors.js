@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
-import { toKg } from '../utils/conversions';
+import { toKg, carbsToKcals, fatToKcals } from '../utils/conversions';
 import { getLeanMass } from '../utils/bodystats';
 import { getCategory, getNumOfFreeMeals, getRefeedDetails, getFullDietBreak } from '../utils/categories';
-import { getProteinInGrams } from '../utils/calories';
+import { getProteinInGrams, getCarbsInGrams, getFatInGrams, getPreworkoutCarbsInGrams, getPostWorkoutCarbsInGrams, getTotalCalories } from '../utils/calories';
 
 export const getWeight = (state) => state.weightLbs;
 export const getBodyfat = (state) => state.bodyfat;
@@ -41,3 +41,33 @@ export const getProteinInGramsSelector = createSelector(
   getCategoryTypeSelector,
   getTraining,
   getProteinInGrams);
+
+export const getCarbsInGramsSelector = createSelector(getCarbsInGrams);
+export const getFatInGramsSelector = createSelector(getFatInGrams);
+export const getPWCarbsInGramsSelector = createSelector(getPreworkoutCarbsInGrams);
+
+export const getTotalCaloriesSelector = createSelector(
+  getProteinInGramsSelector,
+  getCarbsInGramsSelector,
+  getFatInGramsSelector,
+  getTotalCalories);
+
+export const getPreworkoutCaloriesSelector = createSelector(
+  getPreworkoutCarbsInGrams,
+  carbsToKcals);
+
+export const getPostWorkoutCaloriesSelector = createSelector(
+  getPostWorkoutCarbsInGrams,
+  carbsToKcals);
+
+export const getCarbCaloriesSelector = createSelector(
+  getCarbsInGramsSelector,
+  carbsToKcals);
+
+export const getFatCaloriesSelector = createSelector(
+  getFatInGramsSelector,
+  fatToKcals);
+
+export const getProteinCaloriesSelector = createSelector(
+  getFatInGramsSelector,
+  fatToKcals);

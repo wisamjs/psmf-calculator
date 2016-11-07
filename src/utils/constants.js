@@ -12,3 +12,8 @@ export const FULL_BREAK_3 = '6 - 12 weeks';
 export const INACTIVE = 1;
 export const AEROBIC = 2;
 export const WEIGHT_TRAINING = 3;
+
+export const CARB_LIMIT = 20;
+export const FAT_LIMIT = 20;
+export const PREWORKOUT_CARB_LIMIT = 20;
+export const POSTWORKOUT_CARB_LIMIT = 0;

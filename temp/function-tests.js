@@ -95,35 +95,6 @@ xdescribe('Lean Mass', () => {
 });
 
 
-xdescribe('Full Diet Break', () => {
-  it('should get details for category 1', () => {
-    var result = getFullDietBreak(1);
-
-    expect(result.max).to.eql(12);
-    expect(result.min).to.eql(11);
-    expect(result.duration).to.eql('days');
-
-  });
-
-  it('should get details for category 2', () => {
-    var result = getFullDietBreak(2);
-
-    expect(result.max).to.eql(6);
-    expect(result.min).to.eql(2);
-    expect(result.duration).to.eql('weeks');
-
-  });
-
-  it('should get details for category 3', () => {
-    var result = getFullDietBreak(3);
-
-    expect(result.max).to.eql(12);
-    expect(result.min).to.eql(6);
-    expect(result.duration).to.eql('weeks');
-  });
-
-});
-
 xdescribe('Protein intake', () => {
   it('should return the right numbers for Category 1', () => {
     expect(getProteinInGrams(141, 1, 1)).to.eql(176);
@@ -158,10 +129,3 @@ xdescribe('Gram to Calories conversion', () => {
   });
 
 })
-
-xdescribe('Total Calorie Intake', () => {
-  it('should get correct calorie intake', () => {
-    expect(getTotalCalories(264)).to.eql(1336);
-
-  });
-});

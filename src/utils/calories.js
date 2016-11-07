@@ -5,8 +5,19 @@ import {
 
   INACTIVE,
   AEROBIC,
-  WEIGHT_TRAINING
+  WEIGHT_TRAINING,
+
+  CARB_LIMIT,
+  FAT_LIMIT,
+  PREWORKOUT_CARB_LIMIT,
+  POSTWORKOUT_CARB_LIMIT
 } from './constants';
+
+import {
+  proteinToKcals,
+  carbsToKcals,
+  fatToKcals
+} from './conversions';
 
 export function getProteinInGrams(leanMass, bodyFatCategory, trainingCategory) {
   if (bodyFatCategory === CATEGORY_1) {
@@ -50,3 +61,28 @@ export function getProteinInGrams(leanMass, bodyFatCategory, trainingCategory) {
   }
 
 }
+
+export function getCarbsInGrams() {
+  return CARB_LIMIT;
+}
+
+
+export function getFatInGrams() {
+  return FAT_LIMIT;
+}
+
+export function getPreworkoutCarbsInGrams() {
+  return PREWORKOUT_CARB_LIMIT;
+}
+
+export function getPostWorkoutCarbsInGrams() {
+  return POSTWORKOUT_CARB_LIMIT;
+}
+
+export function getTotalCalories(protein, carbs = 20, fat = 20) {
+  return proteinToKcals(protein) +
+  carbsToKcals(carbs) +
+  fatToKcals(fat);
+}
+
+

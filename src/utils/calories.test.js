@@ -1,7 +1,18 @@
 import {expect} from 'chai';
 
 import {
-  getProteinInGrams
+  CARB_LIMIT,
+  FAT_LIMIT,
+  PREWORKOUT_CARB_LIMIT
+} from './constants';
+
+import {
+  getProteinInGrams,
+  getCarbsInGrams,
+  getFatInGrams,
+  getPreworkoutCarbsInGrams,
+  getTotalCalories
+
 } from './calories';
 
 describe('Protein intake', () => {
@@ -21,5 +32,21 @@ describe('Protein intake', () => {
     expect(getProteinInGrams(140, 3, 1)).to.eql(112);
     expect(getProteinInGrams(140, 3, 2)).to.eql(126);
     expect(getProteinInGrams(140, 3, 3)).to.eql(140);
+  });
+});
+
+describe('Carb & Fat intake', () => {
+  it('should return the correct limits', () => {
+    expect(getCarbsInGrams()).to.eql(CARB_LIMIT);
+    expect(getCarbsInGrams()).to.eql(FAT_LIMIT);
+    expect(getPreworkoutCarbsInGrams()).to.eql(PREWORKOUT_CARB_LIMIT);
+  });
+
+});
+
+describe('Total Calorie Intake', () => {
+  it('should get correct calorie intake', () => {
+    expect(getTotalCalories(264, 20, 20)).to.eql(1316);
+
   });
 });

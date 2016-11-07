@@ -9,7 +9,11 @@ import {
   getFreeMealsSelector,
   getRefeedDetailsSelector,
   getFullDietBreakSelector,
-  getProteinInGramsSelector
+  getProteinInGramsSelector,
+  getCarbsInGramsSelector,
+  getPWCarbsInGramsSelector,
+  getFatInGramsSelector,
+  getTotalCaloriesSelector
    } from '../../selectors/selectors.js';
 
 function mapStateToProps({calculator}) {
@@ -19,7 +23,11 @@ function mapStateToProps({calculator}) {
     freeMeals: getFreeMealsSelector(calculator),
     refeedDetails: getRefeedDetailsSelector(calculator),
     fulldietBreak: getFullDietBreakSelector(calculator),
-    proteinInGrams: getProteinInGramsSelector(calculator)
+    proteinInGrams: getProteinInGramsSelector(calculator),
+    carbsInGrams: getCarbsInGramsSelector(calculator),
+    preworkoutCarbsInGrams: getPWCarbsInGramsSelector(calculator),
+    fatInGrams: getFatInGramsSelector(calculator),
+    totalCalories: getTotalCaloriesSelector(calculator)
   };
 }
 
@@ -28,7 +36,7 @@ function mapDispatchToProps() {
   };
 }
 
-const Results = ({leanMass, categoryType, freeMeals, refeedDetails, fulldietBreak, proteinInGrams}) => {
+const Results = ({leanMass, categoryType, freeMeals, refeedDetails, fulldietBreak, proteinInGrams, carbsInGrams, fatInGrams, preworkoutCarbsInGrams, totalCalories}) => {
   return (
     <div className="mx2 flex justify-between flex-column">
       <div>
@@ -39,7 +47,11 @@ const Results = ({leanMass, categoryType, freeMeals, refeedDetails, fulldietBrea
         <p> Refeed Details: {refeedDetails}</p>
         <p> Full Diet Break: {fulldietBreak} </p>
 
+        <Title>Calories</Title>
+        <p> Total calories: {totalCalories}</p>
         <p> Protein: {proteinInGrams}</p>
+        <p> Carbs: {carbsInGrams}</p>
+        <p> Fat: {fatInGrams} </p>
       </div>
 
     </div>
