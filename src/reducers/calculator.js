@@ -13,7 +13,6 @@ const INITIAL_STATE = {
 };
 
 export default function calculator(state = INITIAL_STATE, action= {}) {
-	console.log(state);
 	switch(action.type) {
 		case UPDATE_WEIGHT:
 			return { ...state, weightLbs: action.payload };
