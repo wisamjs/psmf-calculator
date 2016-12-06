@@ -1,3 +1,16 @@
 .w100 {
   width: 100%;
 }
+
+.w80 {
+  width: 80%;
+}
+
+body {
+  /*height: 100vh;*/
+}
+
+
+.default-size {
+  width: 200px;
+}
