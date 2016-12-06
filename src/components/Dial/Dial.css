@@ -1,0 +1,21 @@
+.dial {
+  background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='100' stroke='#EEEEEE' stroke-width='1'><path d='M 0,25 V 100' stroke='#CCCCCC' stroke-width='2' /><path d='M 15,50 V 100' /><path d='M 30,50 V 100' /> <path d='M 45,50 V 100' /><path d='M 60,50 V 100' /></svg>");
+/*  background-position: 50% 50%;
+  background-position-x: var(--x);*/
+  background-repeat: repeat-x;
+  cursor: move;
+  height: 100px;
+  position: relative;
+}
+
+.dial:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100px;
+  transform: translate3d(-1px, 0, 0);
+  background-color: #357EDD;
+}

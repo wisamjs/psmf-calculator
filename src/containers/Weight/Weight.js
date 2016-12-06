@@ -5,10 +5,10 @@ import './Weight.css';
 import { updateWeight } from '../../utils/utils';
 import { getWeightKgSelector } from '../../selectors/selectors.js';
 
-import Input from '../../components/Input';
 import Description from '../../components/Description';
 import Title from '../../components/Title';
 import Button from '../../components/Button';
+import Dial from '../../components/Dial/Dial';
 
 function mapStateToProps({calculator}) {
   return {
@@ -26,7 +26,7 @@ function mapDispatchToProps(dispatch) {
 
 const Weight = ({weightLbs, weightKgs, onChange}) => {
   return (
-    <div className="mx2 flex justify-between flex-column">
+    <div className="mx3 flex flex-column">
       <div>
         <Title>How much do you weigh?</Title>
         <Description>
@@ -35,19 +35,12 @@ const Weight = ({weightLbs, weightKgs, onChange}) => {
       </div>
 
       <div className="mb4">
-        <form
-        name="calculator"
-        className="lato center py2">
-            <Input
-            name="weight"
-            type="number"
-            pattern="[0-9]*"
-            unit="lbs"
-            defaultValue={weightLbs}
-            onChange={onChange}
-            />
-            <p className="grey lato h6"> {weightKgs} Kg</p>
-        </form>
+        <Dial
+        primaryValue={weightLbs}
+        primaryUnit="lbs"
+        secondaryValue={weightKgs}
+        secondaryUnit="Kg"
+        onChange={onChange}/>
       </div>
       <Button path="bodyfat"/>
     </div>
